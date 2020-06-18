@@ -17,7 +17,7 @@ const billStringField = document.querySelector(".billString");
 const billTotalSpan = document.querySelector(".total");
 
 function billTotal(billString){
-alert (billString);
+
     var billItems = 
         billString.split(",");
     var billTotal = 0;
