@@ -19,29 +19,22 @@ var totalTwoEl = document.querySelector(".totalTwo");
 var smsTotalTwoEl = document.querySelector(".smsTotalTwo");
 
 var callTotalTwoEl = document.querySelector(".callTotalTwo");
-
-var smsTotal1 = 0;
-var callTotal1 = 0;
+const Bills = radiobuttons();
 
 function keepOnAdding(){
   
   var checkRBAB = document.querySelector("input[name='billItemType']:checked"); 
 if(checkRBAB){
   var billItemType = checkRBAB.value;
-
-  if (billItemType === "call"){       
-    callTotal1 += 2.75;
-  }
-  else if(billItemType === "sms"){
-   smsTotal1 += 0.75;
-    
-  }
-}
-  callTotalTwoEl.innerHTML = callTotal1.toFixed(2);
-  smsTotalTwoEl.innerHTML = smsTotal1.toFixed(2);
+  Bills.logiccode(billItemType)
   
-  var totals = callTotal1 + smsTotal1;
-  totalTwoEl.innerHTML = totals.toFixed(2);
+}
+  callTotalTwoEl.innerHTML = Bills.getcall().toFixed(2);
+  smsTotalTwoEl.innerHTML = Bills.getsms().toFixed(2);
+  // alert(Bills.getTotals().toFixed(2))
+  totalTwoEl.innerHTML = Bills.getTotals().toFixed(2);
+  var totals = Bills.getTotals();
+  
   
   if (totals >= 50){
 totalTwoEl.classList.add("danger");
