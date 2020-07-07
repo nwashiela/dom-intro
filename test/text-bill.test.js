@@ -25,7 +25,7 @@ describe("text-Bill widget", function () {
         textBill1.textBillTotal("sms");
         textBill1.textBillTotal("call");
 
-        assert.equal(textBill1.smsCostTotal(), 10.75);
+        assert.equal(textBill1.smsCostTotal(), 0.75);
         assert.equal(textBill1.callCostTotal(), 2.75);
         assert.equal(textBill1.textBillTotal(), 3.50);
         
