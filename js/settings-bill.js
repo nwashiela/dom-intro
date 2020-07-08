@@ -10,13 +10,13 @@ var smsCostSettingEl = document.querySelector(".smsCostSetting")
 var warningLevelSettingEl = document.querySelector(".warningLevelSetting")
 var criticalLevelSettingElem = document.querySelector(".criticalLevelSetting")
 //get a reference to the 'Update settings' button
-var smsTotal2 = 0;
-var callTotal2 = 0;
-var callCostSet = 0;
-var smsCostSet = 0;
-var warningLevel = 0;
-var criticalLevel = 0;
-var totals = 0;
+// var smsTotal2 = 0;
+// var callTotal2 = 0;
+// var callCostSet = 0;
+// var smsCostSet = 0;
+// var warningLevel = 0;
+// var criticalLevel = 0;
+// var totals = 0;
 // create a variables that will keep track of all the settings
 function updateMysettings(){
   callCostSet = Number(callCostSettingEl.value);
@@ -25,6 +25,7 @@ function updateMysettings(){
   criticalLevel = Number(criticalLevelSettingElem.value);
   totalColor()
 }
+const billsWithSettings = SettingBills();
 
 function addMyTotals(){
 
@@ -34,27 +35,27 @@ function addMyTotals(){
 
     if(checkSettingBtn){
       var billItemTypeWithSettings = checkSettingBtn.value;
-    
-      if (billItemTypeWithSettings === "call"){       
-        callTotal2 += callCostSet;
-        totals += callCostSet;
-      }
-      else if(billItemTypeWithSettings === "sms"){
-        smsTotal2 +=  smsCostSet;
-        totals += smsCostSet;
-    
-      }
-    }
-    callTotalSettingsStr.innerHTML = callTotal2.toFixed(2);
-    smsTotalSettingsStr.innerHTML = smsTotal2.toFixed(2);
-    
+      
 
-    totalSettingsStr.innerHTML = totals.toFixed(2);
+      // if (billItemTypeWithSettings === "call"){       
+      //   callTotal2 += callCostSet;
+      //   totals += callCostSet;
+      // }
+      // else if(billItemTypeWithSettings === "sms"){
+      //   smsTotal2 +=  smsCostSet;
+      //   totals += smsCostSet;
+    
+      // }  
+      billsWithSettings.settingLogiccode(billItemTypeWithSettings);
+    }
+    callTotalSettingsStr.innerHTML =billsWithSettings.setCallCost().toFixed(2);
+    smsTotalSettingsStr.innerHTML =billsWithSettings.setSmsCost().toFixed(2);
+    totalSettingsStr.innerHTML = billsWithSettings.setTotalCost().toFixed(2);
     totalColor();
 
   } 
 }
-    function totalColor(){
+    function totalColor(totals){
 
       totalSettingsStr.classList.remove("danger");
       totalSettingsStr.classList.remove("warning");
