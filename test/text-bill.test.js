@@ -30,6 +30,31 @@ describe("text-Bill widget", function () {
         assert.equal(textBill1.textBillTotal(), 3.50);
         
     });
+    it ("should return warning when it reach 30", function(){
+        var textBill1 = textBillFactory();
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("call");
+
+        assert.equal(textBill1.setColors(), "warning");
+       // assert.equal(textBill1.getTotals(), 34.25)
+    });
 
 
 

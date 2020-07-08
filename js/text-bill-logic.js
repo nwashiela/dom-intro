@@ -2,7 +2,7 @@ function textBillFactory ()
 {
 	var callTotal = 0;
     var smsTotal = 0;
-
+	var totalCosttext = 0;
     function textBillTotal(billType)
 	{
 		    // get the value entered in the billType textfield
@@ -17,7 +17,7 @@ function textBillFactory ()
 		        smsTotal.toFixed(2);
 		    }
 
-		    var totalCosttext = callTotal + smsTotal;
+		 totalCosttext = callTotal + smsTotal;
 		 
 		    return totalCosttext.toFixed(2);
 	}
@@ -31,11 +31,26 @@ function textBillFactory ()
 		return  smsTotal.toFixed(2);
 		
 	}
+	function setColors(){
+		if (getTotals() >= 50) {
+			return "danger";
+		 }
+		 else if (getTotals() >= 30) {
+			return "warning";
+		 }
 
+	}
+	function getTotals(){
+		return totalCosttext;
+	}
+	
 	return {
 			textBillTotal,
 			callCostTotal,
-			smsCostTotal
+			smsCostTotal,
+			 setColors,
+			 getTotals,
+
 	}
 
 }

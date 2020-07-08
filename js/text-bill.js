@@ -33,12 +33,14 @@
           totalOneElement.innerHTML = total;
  
           //adding colors to values
-          if (total >= 50) {
-             totalOneElement.classList.add("danger");
-          }
-          else if (total >= 30) {
-             totalOneElement.classList.add("warning");
-          }
+         // if (total >= 50) {
+             totalOneElement.classList.add(text_Bill.setColors());
+         //  }
+         //  else if (total >= 30) {
+             totalOneElement.classList.add(text_Bill.setColors());
+         //  }
+
+
        }
     );
 //  });
