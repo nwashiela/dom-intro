@@ -33,15 +33,15 @@ if(checkRBAB){
   smsTotalTwoEl.innerHTML = Bills.getsms().toFixed(2);
   // alert(Bills.getTotals().toFixed(2))
   totalTwoEl.innerHTML = Bills.getTotals().toFixed(2);
-  var totals = Bills.getTotals();
+ // var totals = Bills.getTotals();
   
   
-  if (totals >= 50){
-totalTwoEl.classList.add("danger");
+ // if (totals >= 50){
+totalTwoEl.classList.add(Bills.crimsonAndOrange());
+
+//else if(totals >= 30){
+totalTwoEl.classList.add(Bills.crimsonAndOrange());
 }
-else if(totals >= 30){
-totalTwoEl.classList.add("warning");
-}
-}
+
 
 radioBillAddBtn.addEventListener("click", keepOnAdding);

@@ -14,6 +14,7 @@ function radiobuttons() {
       overall += 0.75;
     }
   }
+  
   function getsms() {
     return smsTotal1;
   }
@@ -24,11 +25,25 @@ function radiobuttons() {
   //  getsms() + getcall();
     return overall;
   }
+function crimsonAndOrange(){
+  if (addcolors >= 50){
+    return "danger";
+  }
+  if(addcolors >= 30){
+    return "warning";
+  }
+}
 
+function addcolors(){
+  logiccode(billItemType) += crimsonAndOrange() ;
+  
+}
   return {
     logiccode,
     getsms,
     getcall,
     getTotals,
+    crimsonAndOrange,
+    addcolors,
   }
 }
