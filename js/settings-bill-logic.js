@@ -44,6 +44,7 @@ function getparammaintotal(){
     return mainTotal;
 }
 return{
+    settingLogiccode,
     setCallCost,
     setSmsCost,
     setTotalCost,
