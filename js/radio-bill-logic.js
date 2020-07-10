@@ -7,42 +7,42 @@ function radiobuttons() {
   function logiccode(billItemType) {
     if (billItemType === "call") {
       callTotal1 += 2.75;
-      overall += 2.75;
     }
     else if (billItemType === "sms") {
       smsTotal1 += 0.75;
-      overall += 0.75;
+    }
+
+    overall = callTotal1 + smsTotal1;
+    return overall.toFixed(2);
+  }
+
+  function getsms() {
+    return smsTotal1.toFixed(2);
+  }
+
+  function getcall() {
+    return callTotal1.toFixed(2);
+  }
+
+  function getTotals() {
+    //  getsms() + getcall();
+    return overall.toFixed(2);
+  }
+
+  function crimsonAndOrange() {
+    if (getTotals() >= 50) {
+      return "danger";
+    }
+    else if (getTotals() >= 30) {
+      return "warning";
     }
   }
-  
-  function getsms() {
-    return smsTotal1;
-  }
-  function getcall() {
-    return callTotal1;
-  }
-  function getTotals() {
-  //  getsms() + getcall();
-    return overall;
-  }
-function crimsonAndOrange(){
-  if (addcolors >= 50){
-    return "danger";
-  }
-  if(addcolors >= 30){
-    return "warning";
-  }
-}
 
-function addcolors(){
-  return getTotals();
-}
   return {
     logiccode,
     getsms,
     getcall,
     getTotals,
-    crimsonAndOrange,
-    addcolors,
+    crimsonAndOrange
   }
 }
