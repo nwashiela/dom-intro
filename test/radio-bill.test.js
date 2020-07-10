@@ -23,5 +23,56 @@ describe("Radio_Button widget", function () {
         assert.equal(countRadiobutton.getcall(), 5.50);
         assert.equal(countRadiobutton.getTotals(), 7.00);
     })
+    it ("should return crimson which is warning when it reach 30", function(){
+        var textBill1 = radiobuttons();
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+
+        assert.equal(textBill1.crimsonAndOrange(), "warning");
+       // assert.equal(textBill1.getTotals(), 34.25)
+    });
+    it ("should return Orange which is danger when it reach 50", function(){
+        var textBill1 = radiobuttons();
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+        textBill1.logiccode("sms");
+        textBill1.logiccode("call");
+
+ 
+        assert.equal(textBill1.crimsonAndOrange(), "warning");
+       // assert.equal(textBill1.getTotals(), 51.70)
+    });
 
 })

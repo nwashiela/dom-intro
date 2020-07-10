@@ -14,7 +14,7 @@ function SettingBills() {
     }
 
     function setSmsCost(smsCost) {
-        smsTotal2 = smscost;
+        smsTotal2 = smsCost;
     }
     function getSmsCost() {
         return smsTotal2;

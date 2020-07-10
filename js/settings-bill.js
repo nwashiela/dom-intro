@@ -1,10 +1,7 @@
 // get a reference to the sms or call radio buttons
-
 var callTotalSettingsStr = document.querySelector(".callTotalSettings")
 var smsTotalSettingsStr = document.querySelector(".smsTotalSettings")
-
 //get a reference to the add button
-
 var callCostSettingEl = document.querySelector(".callCostSetting")
 var smsCostSettingEl = document.querySelector(".smsCostSetting")
 var warningLevelSettingEl = document.querySelector(".warningLevelSetting")
@@ -21,26 +18,24 @@ var criticalLevelSettingElem = document.querySelector(".criticalLevelSetting")
 var SettingBillAddBtn = document.querySelector(".SettingBillAddBtn")
 var updateSettingsElem = document.querySelector(".updateSettings")
 var totalSettingsStr = document.querySelector(".totalSettings")
-
-
-function updateMysettings() {
-  //included instance to the code
-  SettingBills().callCostSet = Number(callCostSettingEl.value);
-  SettingBills().smsCostSet = Number(smsCostSettingEl.value);
-  SettingBills().warningLevel = Number(warningLevelSettingEl.value);
-  SettingBills().criticalLevel = Number(criticalLevelSettingElem.value);
-  totalColor()
-}
 //writinng instance here
 var settingsAndBillTotal = SettingBills();
 
-updateButton.addEventListener("click", updateMysettings);
+function updateMysettings() {
+  //included instance to the code
+  settingsAndBillTotal.setCallCost(Number(callCostSettingEl.value));
+  settingsAndBillTotal.smsCostSet(Number(smsCostSettingEl.value));
+  settingsAndBillTotal.warningLevel(Number(warningLevelSettingEl.value));
+  settingsAndBillTotal.criticalLevel(Number(criticalLevelSettingElem.value));
+  totalColor();
+}
 
+
+SettingBillAddBtn.addEventListener("click", updateMysettings);
 
 function addMyTotals() {
   var checkSettingBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
   // if(totals < criticalLevel){
-
   if (checkSettingBtn) {
     var billItemTypeWithSettings = checkSettingBtn.value;
     if (billItemTypeWithSettings === "call") {
@@ -54,20 +49,19 @@ function addMyTotals() {
       settingsAndBillTotal.sendSms();
     }
   }
-
   callTotalSettingsStr.innerHTML = settingsAndBillTotal.getTotalCallCost().toFixed(2);
   smsTotalSettingsStr.innerHTML = settingsAndBillTotal.getTotalSmsCost().toFixed(2);
   totalSettingsStr.innerHTML = settingsAndBillTotal.getTotalCost().toFixed(2);
   totalColor();
 }
-addButtons.addEventListener("click", addMyTotals);
+updateSettingsElem.addEventListener("click", addMyTotals);
 
-function totalColor(totals) {
+function totalColor() {
   totalSettingsStr.classList.remove("critical");
   totalSettingsStr.classList.remove("warning");
-  otalSettingsStr.classList.add(settingsAndBillTotal.totalClassName());
+  totalSettingsStr.classList.add(settingsAndBillTotal.totalClassName());
   // if (totals >= criticalLevel){
-  //   totalSettingsStr.classList.add("danger");
+  //   totalSettingsStr.classList.add("danger");totalSettingsStr
   // }
   // else if(totals >= warningLevel && totals < criticalLevel){
   //   totalSettingsStr.classList.add("warning");
