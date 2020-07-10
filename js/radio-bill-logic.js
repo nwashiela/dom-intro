@@ -35,8 +35,7 @@ function crimsonAndOrange(){
 }
 
 function addcolors(){
-  logiccode(billItemType) += crimsonAndOrange() ;
-  
+  return getTotals();
 }
   return {
     logiccode,

@@ -10,11 +10,9 @@ function textBillFactory ()
 		    // update the correct total
 		    if (billType === "call"){
 		        callTotal += 2.75;
-		        callTotal.toFixed(2);
 		    }
 		    else if (billType === "sms"){
 		        smsTotal += 0.75;
-		        smsTotal.toFixed(2);
 		    }
 
 		 totalCosttext = callTotal + smsTotal;
