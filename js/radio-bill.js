@@ -26,9 +26,11 @@ radioBillAddBtn.addEventListener("click",
       Bills.logiccode(billItemType);
 
     }
+    //printing to html
     callTotalTwoEl.innerHTML = Bills.getcall();
     smsTotalTwoEl.innerHTML = Bills.getsms();
     totalTwoEl.innerHTML = Bills.getTotals();
 
+    //adding colors to values
     totalTwoEl.classList.add(Bills.crimsonAndOrange());
   });

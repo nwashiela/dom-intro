@@ -25,7 +25,6 @@ function radiobuttons() {
   }
 
   function getTotals() {
-    //  getsms() + getcall();
     return overall.toFixed(2);
   }
 
