@@ -46,33 +46,42 @@ describe("Radio_Button widget", function () {
         textBill1.logiccode("call");
 
         assert.equal(textBill1.crimsonAndOrange(), "warning");
-       // assert.equal(textBill1.getTotals(), 34.25)
+        assert.equal(textBill1.getTotals(), 34.25)
     });
-    it ("should return Orange which is danger when it reach 50", function(){
+    it ("should return danger when it reach 50", function(){
         var textBill1 = radiobuttons();
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
-        textBill1.logiccode("call");
         textBill1.logiccode("sms");
-        textBill1.logiccode("call");
-        textBill1.logiccode("sms");
-        textBill1.logiccode("call");
+        textBill1.logiccode("sms"); 
 
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call"); 
+        
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call");
+        textBill1.logiccode("call"); 
  
-        assert.equal(textBill1.crimsonAndOrange(), "warning");
-       // assert.equal(textBill1.getTotals(), 51.70)
+        assert.equal(textBill1.crimsonAndOrange(),"danger");
+        assert.equal(textBill1.getTotals(), 56.25);
     });
 
 })

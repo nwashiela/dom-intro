@@ -21,7 +21,7 @@ var totalSettingsStr = document.querySelector(".totalSettings")
 //writinng instance here
 var settingsAndBillTotal = SettingBills();
 
-function updateMysettings() {
+function updateMysettings(){
   //included instance to the code
   settingsAndBillTotal.setCallCost(Number(callCostSettingEl.value));
   settingsAndBillTotal.smsCostSet(Number(smsCostSettingEl.value));
@@ -29,9 +29,7 @@ function updateMysettings() {
   settingsAndBillTotal.criticalLevel(Number(criticalLevelSettingElem.value));
   totalColor();
 }
-
-
-SettingBillAddBtn.addEventListener("click", updateMysettings);
+SettingBillAddBtn.addEventListener("click", updateMysettings());
 
 function addMyTotals() {
   var checkSettingBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
@@ -54,11 +52,11 @@ function addMyTotals() {
   totalSettingsStr.innerHTML = settingsAndBillTotal.getTotalCost().toFixed(2);
   totalColor();
 }
-updateSettingsElem.addEventListener("click", addMyTotals);
+updateSettingsElem.addEventListener("click", addMyTotals());
 
 function totalColor() {
-  totalSettingsStr.classList.remove("critical");
-  totalSettingsStr.classList.remove("warning");
+  totalSettingsStr.classList.remove("warningLevel");
+  totalSettingsStr.classList.remove("criticalLevel");
   totalSettingsStr.classList.add(settingsAndBillTotal.totalClassName());
   // if (totals >= criticalLevel){
   //   totalSettingsStr.classList.add("danger");totalSettingsStr

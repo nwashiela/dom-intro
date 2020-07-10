@@ -53,9 +53,42 @@ describe("text-Bill widget", function () {
         textBill1.textBillTotal("call");
 
         assert.equal(textBill1.setColors(), "warning");
-       // assert.equal(textBill1.getTotals(), 34.25)
+        assert.equal(textBill1.getTotals(), 34.25)
     });
+    it ("should return danger when it reach 50", function(){
+        var textBill1 = textBillFactory();
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        textBill1.textBillTotal("sms");
+        
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
 
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        textBill1.textBillTotal("call");
+        
+
+        assert.equal(textBill1.setColors(), "danger");
+        assert.equal(textBill1.getTotals(), 50.75)
+    });
 
 
 });
