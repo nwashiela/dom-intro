@@ -1,4 +1,4 @@
-  describe("calculateBill,take calls cost and sms cost return total cost",function(){
+  describe("calculateBill widget",function(){
     it("enter calls only and return total cost for calls captured",function(){
       assert.equal(calculateBillEvent("call"), 2.75);
     });

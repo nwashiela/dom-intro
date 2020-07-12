@@ -36,7 +36,6 @@ function radiobuttons() {
       return "warning";
     }
   }
-
   return {
     logiccode,
     getsms,

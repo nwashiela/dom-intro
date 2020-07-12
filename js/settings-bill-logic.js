@@ -55,13 +55,13 @@ function SettingBills() {
         }
     }
     function hasReachedCriticaLevel() {
-        return getTotalCallCost() >= getCriticalValues();
+        return getTotalCost() >= getCriticalValues();
     }
     function totalClassName() {
-        if (!hasReachedCriticaLevel()) {
-            return "critical";
+        if (hasReachedCriticaLevel()) {
+            return "danger";
         }
-        if (getTotalCallCost() >= getCriticalValues()) {
+        else if (getTotalCost() >= getWarningValue()) {
             return "warning";
         }
     }
