@@ -26,12 +26,13 @@ function addMyTotals() {
   var checkSettingBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
   if (checkSettingBtn) {
     var billItemTypeWithSettings = checkSettingBtn.value;
-    if (billItemTypeWithSettings === "call") {
-      settingsAndBillTotal.makeCalls();
-    }
-    else if (billItemTypeWithSettings === "sms") {
-      settingsAndBillTotal.sendSms();
-    }
+    // if (billItemTypeWithSettings === "call") {
+    //   settingsAndBillTotal.makeCalls();
+    // }
+    // else if (billItemTypeWithSettings === "sms") {
+    //   settingsAndBillTotal.sendSms();
+    // }
+    settingsAndBillTotal.callOrSms(billItemTypeWithSettings);
   }
   callTotalSettingsStr.innerHTML = settingsAndBillTotal.getTotalCallCost().toFixed(2);
   smsTotalSettingsStr.innerHTML = settingsAndBillTotal.getTotalSmsCost().toFixed(2);

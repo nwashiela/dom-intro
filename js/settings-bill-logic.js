@@ -66,7 +66,17 @@ function SettingBills() {
         }
     }
 
+    function callOrSms(type) {
+        if (type === "call") {
+            makeCalls();
+          }
+          else if (type === "sms") {
+            sendSms();
+          }
+    }
+
     return {
+        callOrSms,
         setCallCost,
         getCallCost,
         setSmsCost,
@@ -75,11 +85,11 @@ function SettingBills() {
         getCriticalValues,
         setWarningValue,
         getWarningValue,
-        makeCalls,
+        // makeCalls,
         getTotalCost,
         getTotalCallCost,
         getTotalSmsCost,
-        sendSms,
+        // sendSms,
         hasReachedCriticaLevel,
         totalClassName,
     }
